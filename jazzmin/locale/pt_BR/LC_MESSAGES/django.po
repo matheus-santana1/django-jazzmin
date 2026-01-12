@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: 4.0.0\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+
+msgid "See Profile"
+msgstr "Ver Perfil"
+
+msgid "Logout"
+msgstr "Sair"
+
+msgid "Account"
+msgstr "Conta"
+
+msgid "Confirm Import"
+msgstr "Confirmar Importação"
+
+msgid "Actions"
+msgstr "Ações"
+
+msgid "Export"
+msgstr "Exportar"
+
+msgid "Resource"
+msgstr "Recurso"
+
+msgid "Export items"
+msgstr "Exportar itens"
+
+msgid "Search"
+msgstr "Pesquisar"
+
+msgid "Navigation"
+msgstr "Navegação"
+
+msgid "Change password"
+msgstr "Alterar senha"
+
+msgid "UI Tweaks"
+msgstr "Personalizar Interface"
+
+msgid "Import finished: {} new, {} updated, {} deleted and {} skipped {}."
+msgstr "Importação finalizada: {} novos, {} atualizados, {} deletados e {} pulados para o modelo {}."

@@ -25,5 +25,8 @@
                 {% endif %}
             {% endif %}
         {% endblock %}
+        {% block pagination %}
+            {% jazzmin_pagination cl top=True %}
+        {% endblock %}
     {% endblock %}
 </div>

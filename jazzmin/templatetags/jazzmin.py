@@ -25,6 +25,7 @@ from django.utils.html import escape, format_html
 from django.utils.safestring import SafeText, mark_safe
 from django.utils.text import get_text_list, slugify
 from django.utils.translation import gettext
+from django.contrib.admin.templatetags.admin_list import pagination as django_pagination
 
 from .. import version
 from ..settings import CHANGEFORM_TEMPLATES, get_settings, get_ui_tweaks
@@ -542,3 +543,13 @@ def style_bold_first_word(message: str) -> SafeText:
 @register.filter
 def unicode_slugify(message: str) -> str:
     return slugify(message, allow_unicode=True)
+
+
+@register.inclusion_tag('admin/pagination.html')
+def jazzmin_pagination(cl, top=False):
+    """
+    Tag customizada que reusa a lógica do Django mas aceita 'top=True'
+    """
+    context = django_pagination(cl)
+    context['is_top'] = top
+    return context

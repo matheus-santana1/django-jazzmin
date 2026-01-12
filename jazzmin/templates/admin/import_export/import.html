@@ -6,6 +6,50 @@
     {{ block.super }}
     <link rel="stylesheet" type="text/css" href="{% static "import_export/import.css" %}"/>
     <link rel="stylesheet" href="{% static 'vendor/select2/css/select2.min.css' %}">
+    <style>
+        .errorlist {
+            width: 100%;
+        }
+
+        .validation-error-container {
+            top: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        td.errors:hover .validation-error-container {
+            opacity: 1;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            table.import-preview tr.skip {
+                background-color: #f1f1f1;
+            }
+
+            table.import-preview tr.new {
+                background-color: #8cc88e;
+            }
+
+            table.import-preview tr.delete {
+                background-color: #c88c8c;
+            }
+
+            table.import-preview tr.update {
+                background-color: #8c98c8
+            }
+
+            .validation-error-container {
+                background-color: #9e3a3a;
+            }
+
+            table.import-preview td ins {
+                background-color: unset !important;
+            }
+
+            table.import-preview td del {
+                background-color: unset !important;
+            }
+        }
+    </style>
 {% endblock %}
 
 {% block breadcrumbs_last %}
@@ -83,15 +127,15 @@
                                         </div>
                                     </div>
                                 {% endfor %}
-                                <div class="col-12 col-lg-9">
-                                    <p>
-                                        <b>{% trans "This importer will import the following fields: " %}</b>
-                                        <ul>
-                                        {% for field in fields %}
+                                <div class="row">
+                                    <div class="col-sm-2 text-left">
+                                        <label>{% trans "This importer will import the following fields: " %}</label>
+                                    </div>
+                                    <ul>
+                                        {% for field in fields_list.0.1 %}
                                             <li>{{ field }}</li>
                                         {% endfor %}
                                         </ul>
-                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -167,7 +211,8 @@
 
             <p>{% trans "Please correct these errors in your data where possible, then reupload it using the form above." %}</p>
 
-            <table class="import-preview">
+            <div class="table-responsive">
+                <table id="result_list" class="table table-striped import-preview">
                 <thead>
                 <tr>
                     <th>{% trans "Row" %}</th>
@@ -215,7 +260,7 @@
                 {% endfor %}
                 </tbody>
             </table>
-
+            </div>
         {% else %}
 
             <div class="row">
@@ -227,7 +272,7 @@
                             </div>
                         </div>
                         <div class="card-body table-responsive p-0" style="overflow-x:auto;">
-                            <table class="table table-hover text-nowrap import-preview">
+                            <table id="result_list" class="table table-striped import-preview">
                                 <thead>
                                     <tr>
                                         <th></th>

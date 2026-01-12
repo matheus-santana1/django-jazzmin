@@ -1,6 +1,7 @@
 {% load admin_list jazzmin i18n %}
 {% get_jazzmin_ui_tweaks as jazzmin_ui %}
 
+{% if not is_top %}
 <div class="col-5">
     <div class="dataTables_info" role="status" aria-live="polite">
         {{ cl.result_count }}
@@ -28,3 +29,12 @@
         {% endif %}
     </ul>
 </div>
+{% else %}
+    <ul class="pagination pagination-sm m-0 float-right">
+        {% if pagination_required %}
+            {% for i in page_range %}
+                {% jazzmin_paginator_number cl i %}
+            {% endfor %}
+        {% endif %}
+    </ul>
+{% endif %}

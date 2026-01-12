@@ -95,7 +95,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        {% block pagination %}{% pagination cl %}{% endblock %}
+                        {% block pagination %}
+                            {% jazzmin_pagination cl %}
+                        {% endblock %}
                     </div>
                 </div>
                 </div>
