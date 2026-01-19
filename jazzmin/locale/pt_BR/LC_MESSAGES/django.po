@@ -51,5 +51,5 @@ msgstr "Por motivos de segurança, digite sua senha antiga e, em seguida, digite
 msgid "Please correct the errors below."
 msgstr "Por favor, corrija os erros abaixo."
 
-msgid "Your password was changed. Access the link again."
-msgstr "Sua senha foi alterada. Acesse o link novamente."
+msgid "Click here to continue."
+msgstr "Clique aqui para continuar."
