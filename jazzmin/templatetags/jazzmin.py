@@ -36,6 +36,7 @@ from ..utils import (
     make_menu,
     order_with_respect_to,
 )
+import os
 
 User = get_user_model()
 register = Library()
@@ -163,11 +164,11 @@ def get_jazzmin_ui_tweaks() -> Dict:
 
 
 @register.simple_tag
-def get_jazzmin_version() -> str:
+def get_app_version() -> str:
     """
     Get the version for this package
     """
-    return version
+    return os.getenv('SYSTEM_VERSION', '1.0.0')
 
 
 @register.simple_tag

@@ -44,3 +44,12 @@ msgstr "Personalizar Interface"
 
 msgid "Import finished: {} new, {} updated, {} deleted and {} skipped {}."
 msgstr "Importação finalizada: {} novos, {} atualizados, {} deletados e {} pulados para o modelo {}."
+
+msgid "Please enter your old password, for security's sake, and then enter your new password twice so we can verify you typed it in correctly."
+msgstr "Por motivos de segurança, digite sua senha antiga e, em seguida, digite sua nova senha duas vezes para que possamos verificar se você a digitou corretamente."
+
+msgid "Please correct the errors below."
+msgstr "Por favor, corrija os erros abaixo."
+
+msgid "Your password was changed. Access the link again."
+msgstr "Sua senha foi alterada. Acesse o link novamente."
