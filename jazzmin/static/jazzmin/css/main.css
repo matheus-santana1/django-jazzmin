@@ -941,7 +941,11 @@ body.jazzmin-login-page {
     align-content: center;
 }
 
-#result_list td:has(img), #result_list .action-checkbox, #result_list .djn-checkbox-select-all {
+#result_list td:has(img) {
+    text-align: center !important;
+}
+
+#result_list .action-checkbox, #result_list .djn-checkbox-select-all {
     padding-top: 10px;
     text-align: center !important;
 }
